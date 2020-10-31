@@ -13,6 +13,9 @@ foreach($requiredFields as $field) {
         $_SESSION['flash']['old'][$field] = $_POST[$field];
     }
 }
+if(!isset($_POST['captcha']) || empty($_POST['captcha']) || $_POST['captcha']!=$_SESSION["captcha_text"]){
+    $_SESSION['flash']['error']['captcha'] = true;
+}
 
 // ACTION: CHECKOUT
 if (empty($_SESSION['flash']['error'])) {
@@ -40,5 +43,3 @@ if (empty($_SESSION['flash']['error'])) {
 } else {
     header('Location: /checkout');
 }
-
-

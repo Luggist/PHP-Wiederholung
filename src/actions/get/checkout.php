@@ -61,14 +61,10 @@ function checkCaptcha(){
         <input <?php if (checkOld("confirmation")) : ?>checked<?php endif; ?> id="confirmation" type="checkbox" name="confirmation">
         <label for="confirmation">Ich habe die AGB und Datenschutzerklärung gelesen und akzeptiere sie.</label>
     </div>
-    <div class="form-group <?php echo checkCaptcha(); ?>">
-		<img src="captcha.php" id="captchaImage">
-	</div>
+    <div class="form-group <?php echo checkError("captcha"); ?>">                                                    
+          <img src="captcha"><br> Antwort <input id="captcha" name="captcha" value="">
 
-    <div class="form-group <?php echo checkCaptcha(); ?>">
-		<label for="captchaAnswer" >Anwort</label>
-		<input type="text" class="form-control text-center" id="captchaAnswer" name="check">
-	</div>
+    </div>
 
     <button style="margin-top:20px;" class="btn" type="submit">Kauf abschließen</button>
     
