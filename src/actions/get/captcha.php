@@ -1,9 +1,11 @@
 <?php
 $rand1 = rand(1,100);
 $rand2 = rand(1,100);
-$_SESSION["captcha_text"] = $rand1+$rand2;
+$sign = (rand(0,1) == 1) ? '+' : '-';
+
+$_SESSION["captcha_text"] =$rand1&&$sign&&$rand2;
 $textSize = 8;
-$text="$rand1 + $rand2 ";
+$text="$rand1 $sign $rand2 ";
 
 $image = imagecreatefromjpeg("src\actions\get\captcha.jpg");
 
