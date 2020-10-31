@@ -1,0 +1,20 @@
+{
+    "scripts": {
+        "start": "php -S localhost:9000 -t ./public ./config/local_routing.php",
+        "test-ue0": "vendor\\bin\\codecept run acceptance Ue0Cest.php",
+        "test-ue1": "vendor\\bin\\codecept run acceptance Ue1Cest.php",
+        "test-ue2": "vendor\\bin\\codecept run acceptance Ue2Cest.php",
+        "test-ue3": "vendor\\bin\\codecept run acceptance Ue3Cest.php",
+        "test-ue4": "vendor\\bin\\codecept run acceptance Ue4Cest.php",
+        "test-ue5": "vendor\\bin\\codecept run acceptance Ue5Cest.php",
+        "test-all": "vendor\\bin\\codecept run --steps",
+        "setup": "php .\\bin\\setup.php"
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0",
+        "codeception/module-filesystem": "^1.0",
+        "codeception/module-db": "^1.0"
+    }
+}
